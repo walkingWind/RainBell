@@ -1,0 +1,25 @@
+<!--
+  Generated template for the Menu page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-menu [content]="content" side="left" type="overlay" >
+  <ion-header>		<!--side让菜单从屏幕右边滑出，type属性应该是弹出样式，这两个属性可以不写-->
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="h4()">
+        Login
+      </button>
+      <button ion-item (click)="openPage(signupPage)">
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!--//下面的标签必不可少，#content对应<ion-menu>标签里的 [content]="content"-->
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

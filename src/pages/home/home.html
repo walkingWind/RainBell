@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon class="ion-plus-round"></ion-icon>
+    </button>
+
+    <ion-title align-self-center="center">雨铃</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    这个页面告诉大家，位置与天气
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+  <!--地图-->
+  <div id="map" style="width: 100%;height:100%"></div>
+
+</ion-content>

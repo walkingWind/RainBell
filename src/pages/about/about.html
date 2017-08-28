@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="paper-plane"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title  align="center">雨铃</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addAlarm()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset *ngFor="let myalarm of alarmList">
+   <ion-item-sliding>
+     <ion-item>
+       <ion-label>
+         <h1>{{myalarm.mytime}}</h1>
+         <p *ngIf="!myalarm.reData.showName">{{myalarm.alarmName}}</p>
+         <p *ngIf="myalarm.reData.showName">{{myalarm.alarmName}},{{myalarm.reData.showName}}</p>
+       </ion-label>
+       <ion-toggle checked="false" ></ion-toggle>
+     </ion-item>
+     <ion-item-options side="right">
+       <button ion-button color="danger" (click)="deleteItem(myalarm)">
+         <ion-icon name="trash"></ion-icon>
+       </button>
+     </ion-item-options>
+   </ion-item-sliding>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item-sliding #item>
+      <ion-item (click)="getLocationWeather()">
+        Item
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button (click)="favorite(item)">Favorite</button>
+        <button ion-button color="danger" (click)="share(item)">Share</button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button ion-button (click)="unread(item)">Unread</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item (click)="getMyLocation()">
+        weizhi
+    </ion-item>
+  </ion-list>
+
+</ion-content>
