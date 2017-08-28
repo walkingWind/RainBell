@@ -1,0 +1,10 @@
+import { ImageResource, ImageUploadResponse, KnownPlatform, ResourcesConfig, SourceImage } from '../definitions';
+export declare function flattenResourceJsonStructure(jsonStructure: any): ImageResource[];
+export declare function createImgDestinationDirectories(imgResources: ImageResource[]): Promise<void[]>;
+export declare function getResourceConfigJson(): Promise<ResourcesConfig>;
+export declare function getSourceImages(buildPlatforms: string[], resourceTypes: string[], resourceDir: string): Promise<SourceImage[]>;
+export declare function findMostSpecificImage(imageResource: ImageResource, srcImagesAvailable: SourceImage[]): SourceImage | null;
+export declare function uploadSourceImages(srcImages: SourceImage[], timeout?: boolean): Promise<ImageUploadResponse[]>;
+export declare function transformResourceImage(imageResource: ImageResource, timeout?: boolean): Promise<void>;
+export declare function addDefaultImagesToProjectResources(projectDirectory: string, platform: KnownPlatform): Promise<void>;
+export declare function addResourcesToConfigXml(projectDirectory: string, platformList: KnownPlatform[], resourceJson: ResourcesConfig): Promise<void>;
